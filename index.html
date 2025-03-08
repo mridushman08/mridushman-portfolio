@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRIDUSHMAN Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+
+    <header>
+        <h1>Welcome to MRIDUSHMAN's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul class="skills-list">
+            <li class="skill" data-detail="HTML, CSS, JavaScript basics">HTML & CSS</li>
+            <li class="skill" data-detail="Advanced JavaScript, ES6, and Frameworks">JavaScript</li>
+            <li class="skill" data-detail="React, Node.js, MongoDB">Web Development</li>
+        </ul>
+    </section>
+
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+
+            <p>Project 1: Online learning platform</p>
+            <a href="https://github.com/mridushman08/Exergia-platform" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <p>Project 2: weather app</p>
+            <a href="https://github.com/mridushman08/Weather-app" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Follow me on <a href="https://www.linkedin.com/in/mridushman-deka-249968319/">LinkedIn</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

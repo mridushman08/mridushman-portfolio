@@ -1,0 +1,274 @@
+/* Reset default margin and padding */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #03045e;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: bubbleAnimation 10s infinite;
+}
+
+@keyframes bubbleAnimation {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0);
+        opacity: 1;
+    }
+}
+
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    left: 20%;
+    top: 100%;
+}
+
+.bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+    left: 50%;
+    top: 100%;
+}
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    animation-duration: 20s;
+    animation-delay: 4s;
+    left: 75%;
+    top: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffeb3b;
+    animation: slide 0.3s ease-out;
+}
+
+@keyframes slide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+#skills {
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+.skill::before {
+    content: attr(data-detail);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: #ffeb3b;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill:hover::before {
+    opacity: 1;
+}
+
+#projects {
+    padding: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.project {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project a {
+    display: block;
+    margin-top: 10px;
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+#contact {
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #ffeb3b;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    transition: border-color 0.3s ease;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #ffeb3b;
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #fbc02d;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+#skills.animate {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .skills-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .project {
+        width: 80%;
+    }
+}
